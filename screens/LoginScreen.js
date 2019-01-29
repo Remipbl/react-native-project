@@ -8,7 +8,7 @@ export default class LoginScreen extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {username:'',email:'', password:'', error:'', loading: false};
+    this.state = {username:'' ,email:'', password:'', error:'', loading: false};
   }
 
   onLoginPress() {

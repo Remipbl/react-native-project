@@ -1,19 +1,23 @@
 import React from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { AppLoading, Asset, Font, Icon } from 'expo';
+
 import AppNavigator from './navigation/AppNavigator';
 
 import ApiKeys from './constants/ApiKeys';
 import * as firebase from 'firebase';
 
 export default class App extends React.Component {
-  
 
   constructor(props) {
     super(props);
     this.state = {
       isLoadingComplete: false,
     };
+    
+    console.ignoredYellowBox = [
+      'Setting a timer'
+    ]
 
     //Initialize firebase
     if (!firebase.apps.length) { firebase.initializeApp(ApiKeys.FirebaseConfig); }

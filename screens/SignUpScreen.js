@@ -5,30 +5,36 @@ import * as firebase from 'firebase';
 
 import { AuthService } from './../services/auth'; 
 
-export default class LoginScreen extends React.Component {
+export default class SignUpScreen extends React.Component {
     state = {};
 
   constructor(props) {
     super(props);
-    this.state = {email:'', password:'', error:'', loading: false};
+    this.state = {username:'' ,email:'', password:'', error:'', loading: false};
     this.authService = new AuthService();
   }
 
-  onLoginPress() {
+  onSignUpPress() {
     this.setState({error:'', loading: true});
-
-    this.authService.signin({email: this.state.email, password: this.state.password})
-    .subscribe(res => {
-        if (res) {
-            this.setState({error:'', loading:false});
-            this.props.navigation.navigate('App');
-        } else {
-            this.setState({error:'Authentification failed', loading:false});
-        }
-    });
+    if (this.checkCredentials()) {
+        this.authService.signup({email: this.state.email, password: this.state.password, username: this.state.username})
+        .subscribe(res => {
+            if (res) {
+                this.setState({loading:false});
+                this.props.navigation.navigate('App');
+            } else {
+                this.setState({error:'Authentification failed', loading:false});
+            }
+        });
+    }
   }
 
   checkCredentials() {
+        if (this.state.username == '') {
+            this.setState({error:'Username is not set', loading:false});
+            return false;
+        }
+
         if (this.state.email == '') {
             this.setState({error:'Email is not set', loading:false});
             return false;
@@ -41,8 +47,8 @@ export default class LoginScreen extends React.Component {
         return true;
   }
 
-  navigateToSignUp() {
-    this.props.navigation.navigate('SignUp');
+  navigateToSignIn() {
+      this.props.navigation.navigate('Auth');
   }
 
   renderButtonOrLoading() {
@@ -53,8 +59,8 @@ export default class LoginScreen extends React.Component {
             return (
                 <View>
                     <Button
-                    onPress={this.onLoginPress.bind(this)}
-                    title='Login'></Button>
+                    onPress={this.onSignUpPress.bind(this)}
+                    title='Sign Up'></Button>
                 </View>
             )
         }
@@ -63,6 +69,10 @@ export default class LoginScreen extends React.Component {
   render() {
     return (
         <View>
+            <Input
+            placeholder='Username'
+            onChangeText={username => this.state.username = username}
+            />
             <Input
             placeholder='Email'
             onChangeText={email => this.state.email = email}
@@ -75,8 +85,8 @@ export default class LoginScreen extends React.Component {
             <Text>{this.state.error}</Text>
             {this.renderButtonOrLoading()}
             <Button
-            onPress={this.navigateToSignUp.bind(this)}
-            title="You haven't an account ?"
+            onPress={this.navigateToSignIn.bind(this)}
+            title="You have an account ?"
             ></Button>
         </View>
     );

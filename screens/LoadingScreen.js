@@ -26,16 +26,14 @@ export default class LoadingScreen extends React.Component {
 
   render() {
     return (
-        <View style={styles.container}>
-            <ActivityIndicator />
-        </View>
+      <ActivityIndicator style={styles.indicator}/>
     );
   }
 
 }
 
 const styles = StyleSheet.create({
-  container: {
-    marginTop:60
+  indicator: {
+    marginTop:100
   }
 });

@@ -52,7 +52,6 @@ export default class SignUpScreen extends React.Component {
   }
 
   renderButtonOrLoading() {
-        console.log(this.state.loading);
         if (this.state.loading) {
             return <Text>Loading...</Text>
         } else {

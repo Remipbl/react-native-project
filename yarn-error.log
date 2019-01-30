@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/bin/node /mnt/c/Users/adrie/AppData/Roaming/npm/node_modules/yarn/bin/yarn.js add rxjs@6 rxjs-compat@6
+  /usr/bin/node /mnt/c/Users/adrie/AppData/Roaming/npm/node_modules/yarn/bin/yarn.js add @expo/react-native-action-sheet@latest
 
 PATH: 
   /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Users/adrie/AppData/Local/Android/Sdk/platform-tools:/mnt/c/Users/adrie/AppData/Local/Android/Sdk/tools:/mnt/c/Program Files/Java/jdk1.8.0_191/bin:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath_target_283352625:/mnt/c/Program Files (x86)/Intel/iCLS Client:/mnt/c/Program Files/Intel/iCLS Client:/mnt/c/Windows/System32:/mnt/c/Windows:/mnt/c/Windows/System32/wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/IPT:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/IPT:/mnt/c/Program Files (x86)/ATI Technologies/ATI.ACE/Core-Static:/mnt/c/Program Files/cURL/bin:/mnt/c/HashiCorp/Vagrant/bin:/mnt/c/Program Files/Intel/WiFi/bin:/mnt/c/Program Files/Common Files/Intel/WirelessCommon:/mnt/d/Logiciel/Visual Studio code/Microsoft VS Code/bin:/mnt/c/Windows/System32/OpenSSH:/mnt/c/Program Files/PuTTY:/mnt/c/Program Files/TortoiseSVN/bin:/mnt/d/Logiciel/AndroidStudio/platform-tools/adb.exe:/mnt/d/Logiciel/AndroidStudio/platform-tools:/mnt/d/Logiciel/AndroidStudio/jdk-11.0.1_windows-x64_bin/jdk-11.0.1/bin:/mnt/d/Logiciel/AndroidStudio/gradle-4.10.2/bin:/mnt/c/Program Files/nodejs:/mnt/c/Users/adrie/AppData/Local/Microsoft/WindowsApps:/mnt/d/Logiciel/Visual Studio code/Microsoft VS Code/bin:/mnt/c/Users/adrie/.babun:/mnt/c/Users/adrie/AppData/Roaming/npm
@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  Error: ENOENT: no such file or directory, lstat '/home/adrienms/.cache/yarn/v4/npm-babel-core-6.26.3-b2e2f09e342d0f0c88e2f02e067794125e75c207/node_modules/babel-core/lib/helpers'
+  Error: ENOENT: no such file or directory, lstat '/home/adrienms/.cache/yarn/v4/npm-@redux-saga-symbols-1.0.0-264748aff73feb5ea2627b2a1c5ef15f6a0fac5e/node_modules/@redux-saga/symbols/dist/redux-saga-symbols.cjs.js'
 
 npm manifest: 
   {
@@ -37,6 +37,7 @@ npm manifest:
       "prop-types": "^15.6.2",
       "react": "16.5.0",
       "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
+      "react-native-actionsheet": "2.4.2",
       "react-native-elements": "^1.0.0",
       "react-navigation": "3.0",
       "react-redux": "^6.0.0",
@@ -46,7 +47,7 @@ npm manifest:
       "redux-promise-middleware": "^5.1.1",
       "redux-saga": "^1.0.0",
       "redux-thunk": "^2.3.0",
-      "rxjs": "^6.3.3"
+      "rxjs": "6"
     },
     "devDependencies": {
       "babel-preset-expo": "^5.0.0",
@@ -5961,6 +5962,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
     integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
   
+  react-native-actionsheet@2.4.2:
+    version "2.4.2"
+    resolved "https://registry.yarnpkg.com/react-native-actionsheet/-/react-native-actionsheet-2.4.2.tgz#6a00dd51a75ef2c8974312130e405af73191500f"
+    integrity sha512-DBoWIvVwuWXuptF4t46pBqkFxaUxS+rsIdHiA05t0n4BdTIDV2R4s9bLEUVOGzb94D7VxIamsXZPA/3mmw+SXg==
+  
   react-native-branch@2.2.5:
     version "2.2.5"
     resolved "https://registry.yarnpkg.com/react-native-branch/-/react-native-branch-2.2.5.tgz#4074dd63b4973e6397d9ce50e97b57c77a518e9d"
@@ -6590,7 +6596,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/rx-lite/-/rx-lite-4.0.8.tgz#0b1e11af8bc44836f04a6407e92da42467b79444"
     integrity sha1-Cx4Rr4vESDbwSmQH6S2kJGe3lEQ=
   
-  rxjs@^6.3.3:
+  rxjs@6:
     version "6.3.3"
     resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.3.3.tgz#3c6a7fa420e844a81390fb1158a9ec614f4bad55"
     integrity sha512-JTWmoY9tWCs7zvIk/CvRjhjGaOd+OVBM987mxFo+OW66cGpdKjZcpmc74ES1sB//7Kl/PAe8+wEakuhG4pcgOw==

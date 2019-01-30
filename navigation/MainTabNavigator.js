@@ -6,7 +6,7 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
-import LogoutScreen from '../screens/LogoutScreen';
+import ProfilScreen from '../screens/ProfilScreen';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
@@ -54,12 +54,12 @@ SettingsStack.navigationOptions = {
   ),
 };
 
-const LogoutStack = createStackNavigator({
-  Settings: LogoutScreen,
+const ProfilStack = createStackNavigator({
+  Settings: ProfilScreen,
 });
 
-LogoutStack.navigationOptions = {
-  tabBarLabel: 'Log Out',
+ProfilStack.navigationOptions = {
+  tabBarLabel: 'Profil',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -72,5 +72,5 @@ export default createBottomTabNavigator({
   HomeStack,
   LinksStack,
   SettingsStack,
-  LogoutStack,
+  ProfilStack,
 });

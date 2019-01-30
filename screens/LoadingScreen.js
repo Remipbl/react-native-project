@@ -8,24 +8,26 @@ import {
   } from 'react-native';
 import * as firebase from 'firebase';
 
+import { AuthService } from './../services/auth';
+
 export default class LoadingScreen extends React.Component {
 
   constructor(props) {
     super(props);
+    this.authService = new AuthService();
     this._bootstrapAsync();
   }
 
   _bootstrapAsync() {
-        firebase.auth().onAuthStateChanged(user => {
-            this.props.navigation.navigate(user ? 'App' : 'Auth');
-        });
+    this.authService.getUserInformations().subscribe(user => {
+      this.props.navigation.navigate(user ? 'App' : 'Auth');
+    });
   }
 
   render() {
     return (
-        <View>
+        <View style={styles.container}>
             <ActivityIndicator />
-            <StatusBar barStyle="default" />
         </View>
     );
   }
@@ -33,5 +35,7 @@ export default class LoadingScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  
+  container: {
+    marginTop:60
+  }
 });

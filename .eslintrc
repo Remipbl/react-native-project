@@ -8,12 +8,12 @@
   "plugins": [
     "flowtype",
     "react",
-    "prettier",
-    "detox"
+    "prettier"
   ],
   "rules": {
-    "no-use-before-define": 0,
     "no-unused-vars": "error",
+    "no-use-before-define": 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "prettier/prettier": [
       "error",
       {

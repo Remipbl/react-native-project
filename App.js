@@ -4,6 +4,9 @@ import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { AppLoading, Asset, Font, Icon } from 'expo';
 import AppNavigator from './src/AppNavigator';
 
+import ApiKeys from './src/constants/ApiKeys';
+import * as firebase from 'firebase';
+
 class App extends React.Component {
   constructor() {
     super();

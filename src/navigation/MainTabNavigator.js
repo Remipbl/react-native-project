@@ -6,6 +6,7 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import ProfilScreen from '../screens/ProfilScreen';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
@@ -41,8 +42,20 @@ SettingsStack.navigationOptions = {
   ),
 };
 
+const ProfilStack = createStackNavigator({
+  Settings: ProfilScreen,
+});
+
+ProfilStack.navigationOptions = {
+  tabBarLabel: 'Profil',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
+  ),
+};
+
 export default createBottomTabNavigator({
   HomeStack,
   LinksStack,
   SettingsStack,
+  ProfilStack,
 });

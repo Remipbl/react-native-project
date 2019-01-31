@@ -3,10 +3,23 @@ import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { AppLoading, Asset, Font, Icon } from 'expo';
 import AppNavigator from './src/navigation/AppNavigator';
 
+import ApiKeys from './src/constants/ApiKeys';
+import * as firebase from 'firebase';
+
 class App extends React.Component {
-  state = {
-    isLoadingComplete: false,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoadingComplete: false,
+    };
+    
+    console.ignoredYellowBox = [
+      'Setting a timer'
+    ]
+
+    //Initialize firebase
+    if (!firebase.apps.length) { firebase.initializeApp(ApiKeys.FirebaseConfig); }
+  }
 
   render() {
     if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {

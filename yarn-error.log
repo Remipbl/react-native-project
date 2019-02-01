@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/bin/node /mnt/c/Users/adrie/AppData/Roaming/npm/node_modules/yarn/bin/yarn.js
+  /usr/bin/node /mnt/c/Users/adrie/AppData/Roaming/npm/node_modules/yarn/bin/yarn.js add react-native-zhb-actionsheet
 
 PATH: 
   /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Users/adrie/AppData/Local/Android/Sdk/platform-tools:/mnt/c/Users/adrie/AppData/Local/Android/Sdk/tools:/mnt/c/Program Files/Java/jdk1.8.0_191/bin:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath_target_283352625:/mnt/c/Program Files (x86)/Intel/iCLS Client:/mnt/c/Program Files/Intel/iCLS Client:/mnt/c/Windows/System32:/mnt/c/Windows:/mnt/c/Windows/System32/wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/IPT:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/IPT:/mnt/c/Program Files (x86)/ATI Technologies/ATI.ACE/Core-Static:/mnt/c/Program Files/cURL/bin:/mnt/c/HashiCorp/Vagrant/bin:/mnt/c/Program Files/Intel/WiFi/bin:/mnt/c/Program Files/Common Files/Intel/WirelessCommon:/mnt/d/Logiciel/Visual Studio code/Microsoft VS Code/bin:/mnt/c/Windows/System32/OpenSSH:/mnt/c/Program Files/PuTTY:/mnt/c/Program Files/TortoiseSVN/bin:/mnt/d/Logiciel/AndroidStudio/platform-tools/adb.exe:/mnt/d/Logiciel/AndroidStudio/platform-tools:/mnt/d/Logiciel/AndroidStudio/jdk-11.0.1_windows-x64_bin/jdk-11.0.1/bin:/mnt/d/Logiciel/AndroidStudio/gradle-4.10.2/bin:/mnt/c/Program Files/nodejs:/mnt/c/Users/adrie/AppData/Local/Microsoft/WindowsApps:/mnt/d/Logiciel/Visual Studio code/Microsoft VS Code/bin:/mnt/c/Users/adrie/.babun:/mnt/c/Users/adrie/AppData/Roaming/npm
@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  Error: ENOENT: no such file or directory, lstat '/home/adrienms/.cache/yarn/v4/npm-request-promise-core-1.1.1-3eee00b2c5aa83239cfb04c5700da36f81cd08b6/node_modules/request-promise-core/lib/plumbing.js'
+  Error: ENOENT: no such file or directory, lstat '/home/adrienms/.cache/yarn/v4/npm-sisteransi-0.1.1-5431447d5f7d1675aac667ccd0b865a4994cb3ce/node_modules/sisteransi/src'
 
 npm manifest: 
   {
@@ -37,7 +37,9 @@ npm manifest:
       "formik": "^1.4.3",
       "react": "16.5.0",
       "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
+      "react-native-elements": "^1.0.0",
       "react-native-keyboard-aware-scroll-view": "^0.8.0",
+      "react-native-vector-icons": "^6.2.0",
       "react-navigation": "^3.0.9",
       "rxjs": "6"
     },
@@ -2159,6 +2161,14 @@ Lockfile:
       color-convert "^1.9.1"
       color-string "^1.5.2"
   
+  color@^3.1.0:
+    version "3.1.0"
+    resolved "https://registry.yarnpkg.com/color/-/color-3.1.0.tgz#d8e9fb096732875774c84bf922815df0308d0ffc"
+    integrity sha512-CwyopLkuRYO5ei2EpzpIh6LqJMt6Mt+jZhO5VI5f/wJLZriXQE32/SSqzmrh+QB+AZT81Cj8yv+7zwToW8ahZg==
+    dependencies:
+      color-convert "^1.9.1"
+      color-string "^1.5.2"
+  
   colour@~0.7.1:
     version "0.7.1"
     resolved "https://registry.yarnpkg.com/colour/-/colour-0.7.1.tgz#9cb169917ec5d12c0736d3e8685746df1cadf778"
@@ -3853,7 +3863,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
     integrity sha512-rqcy4pJo55FTTLWt+bU8ukscqHeE/e9KWvsOW2b/a3afxQZhwkQdT1rPPCJ0rYXdj4vNcasY8zHTH+jF/qStxw==
   
-  hoist-non-react-statics@^3.0.1:
+  hoist-non-react-statics@^3.0.1, hoist-non-react-statics@^3.1.0:
     version "3.3.0"
     resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.0.tgz#b09178f0122184fb95acf525daaecb4d8f45958b"
     integrity sha512-0XsbTXxgiaCDYDIWFcwkmerZPSwywfUqYmwT4jzewKTQSWoE6FCMoUVOeBJWK3E/CrWbxRG3m5GzY4lnIwGRBA==
@@ -4985,6 +4995,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/lodash.mapvalues/-/lodash.mapvalues-4.6.0.tgz#1bafa5005de9dd6f4f26668c30ca37230cc9689c"
     integrity sha1-G6+lAF3p3W9PJmaMMMo3IwzJaJw=
   
+  lodash.merge@^4.6.1:
+    version "4.6.1"
+    resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.1.tgz#adc25d9cb99b9391c59624f379fbba60d7111d54"
+    integrity sha512-AOYza4+Hf5z1/0Hztxpm2/xiPZgi/cjMqdnKTUWTBSKchJlxXXuUSxCCl8rJlf4g6yww/j6mA8nC8Hw/EZWxKQ==
+  
   lodash.omit@^4.5.0:
     version "4.5.0"
     resolved "https://registry.yarnpkg.com/lodash.omit/-/lodash.omit-4.5.0.tgz#6eb19ae5a1ee1dd9df0b969e66ce0b7fa30b5e60"
@@ -5818,6 +5833,11 @@ Lockfile:
     dependencies:
       mimic-fn "^1.0.0"
   
+  opencollective-postinstall@^2.0.0:
+    version "2.0.1"
+    resolved "https://registry.yarnpkg.com/opencollective-postinstall/-/opencollective-postinstall-2.0.1.tgz#798e83e168f7b91949061c2683f762af747f17cc"
+    integrity sha512-saQQ9hjLwu/oS0492eyYotoh+bra1819cfAT5rjY/e4REWwuc8IgZ844Oo44SiftWcJuBiqp0SA0BFVbmLX0IQ==
+  
   opn@^3.0.2:
     version "3.0.3"
     resolved "https://registry.yarnpkg.com/opn/-/opn-3.0.3.tgz#b6d99e7399f78d65c3baaffef1fb288e9b85243a"
@@ -6328,6 +6348,19 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/react-native-branch/-/react-native-branch-2.2.5.tgz#4074dd63b4973e6397d9ce50e97b57c77a518e9d"
     integrity sha1-QHTdY7SXPmOX2c5Q6XtXx3pRjp0=
   
+  react-native-elements@^1.0.0:
+    version "1.0.0"
+    resolved "https://registry.yarnpkg.com/react-native-elements/-/react-native-elements-1.0.0.tgz#95bc194f61ec4658d8dbd977524f8c4fd3ada136"
+    integrity sha512-m5kzFCOIEyoY5qTYn6c2n9AYodn1Ol4tVNEaQ5wVXwaDDNyafshqXQ3QmYUWW8yfogMmCdLSi0KfQmYQNElEtA==
+    dependencies:
+      color "^3.1.0"
+      hoist-non-react-statics "^3.1.0"
+      lodash.merge "^4.6.1"
+      opencollective-postinstall "^2.0.0"
+      prop-types "^15.5.8"
+      react-native-ratings "^6.3.0"
+      react-native-status-bar-height "^2.2.0"
+  
   react-native-gesture-handler@1.0.9:
     version "1.0.9"
     resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.0.9.tgz#ddec4d19d51cb6fb54df6eca792ebd76aaef083f"
@@ -6368,6 +6401,14 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/react-native-platform-touchable/-/react-native-platform-touchable-1.1.1.tgz#fde4acc65eea585d28b164d0c3716a42129a68e4"
     integrity sha1-/eSsxl7qWF0osWTQw3FqQhKaaOQ=
   
+  react-native-ratings@^6.3.0:
+    version "6.3.0"
+    resolved "https://registry.yarnpkg.com/react-native-ratings/-/react-native-ratings-6.3.0.tgz#becda9379616776a81d9d90bfc95ea40b76286fb"
+    integrity sha512-vjzsTM4L3J3n0X9fJMFSJ3ZUqbPp2ExZtgg/Ycst9SqwiHCOouEwEpEcLF+KzYp3MgL62ZACIKSUyfWIIdBafA==
+    dependencies:
+      lodash "^4.17.4"
+      prop-types "^15.5.10"
+  
   react-native-reanimated@1.0.0-alpha.10:
     version "1.0.0-alpha.10"
     resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.0.0-alpha.10.tgz#e9e6fb35a2cf52fdc912b9fbc76f34f80698e530"
@@ -6397,6 +6438,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-1.0.0-alpha.22.tgz#7a120377b52aa9bbb94d0b8541a014026be9289b"
     integrity sha512-kSyAt0AeVU6N7ZonfV6dP6iZF8B7Bce+tk3eujXhzBGsLg0VSLnU7uE9VqJF0xdQrHR91ZjGgVMieo/8df9KTA==
   
+  react-native-status-bar-height@^2.2.0:
+    version "2.2.0"
+    resolved "https://registry.yarnpkg.com/react-native-status-bar-height/-/react-native-status-bar-height-2.2.0.tgz#3bd51de134660efc5f5ad136ca573c7d5790f7ed"
+    integrity sha512-4WJpyZirzeMHyZiyNEy4LnSPOtuLRVy3+28Rhz7ffrjCVcc5RFcC0HVjFnkwfuhcTyXIDtzPG6canJkXzbTtBA==
+  
   react-native-svg@8.0.8:
     version "8.0.8"
     resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-8.0.8.tgz#5d4c636751d9db2d98a9b3cfc4ef45c4eac65d60"
@@ -6424,6 +6470,15 @@ Lockfile:
     version "6.0.0"
     resolved "https://registry.yarnpkg.com/react-native-vector-icons/-/react-native-vector-icons-6.0.0.tgz#3a7076dbe244ea94c6d5e92802a870e64a4283c5"
     integrity sha512-uF3oWb3TV42uXi2apVOZHw9oy9Nr5SXDVwOo1umQWo/yYCrDzXyVfq14DzezgEbJ9jfc/yghBelj0agkXmOKlg==
+    dependencies:
+      lodash "^4.0.0"
+      prop-types "^15.6.2"
+      yargs "^8.0.2"
+  
+  react-native-vector-icons@^6.2.0:
+    version "6.2.0"
+    resolved "https://registry.yarnpkg.com/react-native-vector-icons/-/react-native-vector-icons-6.2.0.tgz#2682b718099eb9470c0defd38da47deb844a0f9c"
+    integrity sha512-NEQeQF7RzO5OILV4Q/F8P3pSuwN45/PPbOwU8/Eocc2Kl1bH1D42WFj+WSbCLVKeEq6oo7uj3tGqmrXGLs974A==
     dependencies:
       lodash "^4.0.0"
       prop-types "^15.6.2"

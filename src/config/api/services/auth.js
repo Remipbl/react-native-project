@@ -31,7 +31,7 @@ function signin(credentials: Object) {
 /**
  * Sign Up firebase method with Email and Password
  *
- * @param {{email: string, password: string, username: string}} credentials
+ * @param {{email: string, password: string, f_name: string, l_name: string, age: number, gender: string, nationality: string, image: any}} credentials
  * @return {Observable<boolean>} Observable<boolean>
  * @public
  */
@@ -41,26 +41,30 @@ function signup(credentials: Object) {
       .auth()
       .createUserWithEmailAndPassword(credentials.email, credentials.password)
       .then(res => {
+        console.log(credentials);
         firebase
           .database()
           .ref(`/users/${res.user.uid}/`)
           .set({
             id: res.user.uid,
-            username: credentials.username,
+            f_name: credentials.f_name,
+            l_name: credentials.l_name,
             email: credentials.email,
+            age: credentials.age,
+            nationality: credentials.nationality,
             image: null,
           })
           .then(() => {
-            observer.next(true);
+            observer.next(res.user.uid);
             observer.complete();
           })
           .catch(() => {
-            observer.next(false);
+            observer.next(null);
             observer.complete();
           });
       })
       .catch(() => {
-        observer.next(false);
+        observer.next(null);
         observer.complete();
       });
   });
@@ -86,9 +90,12 @@ function getUserInformations() {
                 returnArr[childSnapshot.key] = childSnapshot.val();
               });
               observer.next({
-                id: returnArr.id,
+                id: returnArr.uid,
+                f_name: returnArr.f_name,
+                l_name: returnArr.l_name,
                 email: returnArr.email,
-                username: returnArr.username,
+                age: returnArr.age,
+                nationality: returnArr.nationality,
                 image: returnArr.image,
               });
               observer.complete();
@@ -120,8 +127,11 @@ function updateUser(credentials: Object) {
       .ref(`/users/${credentials.id}/`)
       .update({
         id: credentials.id,
+        f_name: credentials.f_name,
+        l_name: credentials.l_name,
         email: credentials.email,
-        username: credentials.username,
+        age: credentials.age,
+        nationality: credentials.nationality,
         image: credentials.image,
       })
       .then(() => {

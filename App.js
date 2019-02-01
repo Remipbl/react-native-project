@@ -6,6 +6,24 @@ import AppNavigator from './src/AppNavigator';
 
 import ApiKeys from './src/constants/ApiKeys';
 import * as firebase from 'firebase';
+<<<<<<< HEAD
+=======
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoadingComplete: false,
+    };
+    
+    console.ignoredYellowBox = [
+      'Setting a timer'
+    ]
+
+    //Initialize firebase
+    if (!firebase.apps.length) { firebase.initializeApp(ApiKeys.FirebaseConfig); }
+  }
+>>>>>>> 960229d7d054e5d258bac54fc06d2bfa31988dd3
 
 class App extends React.Component {
   constructor() {

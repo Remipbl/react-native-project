@@ -1,10 +1,11 @@
+// @flow
 export class User {
-    id;
-    email;
-    username;
-    image;
+    id: string;
+    email: string;
+    username: string;
+    image: string;
 
-    constructor(id, email, username, image = null) {
+    constructor(id: string, email: string, username: string, image: string = null) {
         this.id = id;
         this.email = email;
         this.username = username;
@@ -16,7 +17,7 @@ export class User {
      * 
      * @return {{id: string, email: string, username: string, image: string}}
      */
-    getDatasToJSON() {
+    getDatasToJSON(): {id: string, email: string, username: string, image: string} {
         return {id: this.id, email: this.email, username: this.username, image: this.image};
     }
 }

@@ -4,10 +4,6 @@ import * as firebase from 'firebase';
 
 export default class ProfilScreen extends React.Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   logout() {
     firebase.auth().signOut();
     this.props.navigation.navigate('Auth');

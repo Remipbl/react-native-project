@@ -67,7 +67,7 @@ export default class SignUpScreen extends React.Component {
 
   render() {
     return (
-        <KeyboardAvoidingView behavior="padding" style={styles.container}>
+        <KeyboardAvoidingView style={styles.container}>
             <Button
             onPress={this.navigateToSignIn}
             title="You have an account ?"

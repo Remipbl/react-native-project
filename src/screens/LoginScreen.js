@@ -12,10 +12,12 @@ import {
   TextInput,
   Button,
   Dimensions,
-  KeyboardAvoidingView
+  KeyboardAvoidingView,
+  TouchableHighlight
 } from 'react-native';
 import { WebBrowser } from 'expo';
 import { Formik } from 'formik';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 import { MonoText } from '../components/StyledText';
 
@@ -65,46 +67,61 @@ export default class LoginScreen extends React.Component {
   render() {
     return (
       <KeyboardAvoidingView style={styles.container} behavior="padding">
-        <Image source={require('../../assets/images/background.png')} style={styles.test}></Image>
-        <Image source={require('../../assets/images/logoJustMeet.png')} style={styles.logo}></Image>
-        <Formik
-          initialValues={{ email: this.state.email, password: this.state.password }}
-          onSubmit={values => {
-            this.setState({email: values.email, password: values.password});
-            this.onLoginPress()
-          }}
-        >
-        {props => (
-          <View style={styles.form}>
-            <View style={styles.formContent}>
-              <Image source={require('../../assets/images/user.png')} style={styles.iconInput}></Image>
-              <TextInput
-                onChangeText={props.handleChange('email')}
-                onBlur={props.handleBlur('email')}
-                value={props.values.email}
-                placeholder="Email"
-                style={styles.input}
-              />
+        <Image source={require('../../assets/images/background.png')} style={styles.background}></Image>
+        <View style={styles.containerLogo}>
+          <Image source={require('../../assets/images/logoJustMeet.png')} style={styles.logo}></Image>
+        </View>
+        <View style={styles.containerForm}>
+          <Formik
+            initialValues={{ email: this.state.email, password: this.state.password }}
+            onSubmit={values => {
+              this.setState({email: values.email, password: values.password});
+              this.onLoginPress()
+            }}
+          >
+          {props => (
+            <View style={styles.form}>
+              <View style={styles.formContent}>
+                <Image source={require('../../assets/images/user.png')} style={styles.iconInput}></Image>
+                <TextInput
+                  onChangeText={props.handleChange('email')}
+                  onBlur={props.handleBlur('email')}
+                  value={props.values.email}
+                  placeholder="Email"
+                  style={styles.input}
+                />
+              </View>
+              <View style={styles.formContent}>
+                <Image source={require('../../assets/images/locker.png')} style={styles.iconInput}></Image>
+                <TextInput
+                  onChangeText={props.handleChange('password')}
+                  onBlur={props.handleBlur('password')}
+                  value={props.values.password}
+                  placeholder="Password"
+                  secureTextEntry
+                  style={styles.input}
+                />
+              </View>
+              <View style={styles.error}>
+                <Text style={styles.errorText}>{this.state.error}</Text>
+              </View>
+              <View style={styles.containerSubmit}>
+                <TouchableHighlight style={styles.submit} onPress={props.handleSubmit}>
+                  <Text style={styles.submitText}>Submit</Text>
+                </TouchableHighlight>
+              </View>
             </View>
-            <View style={styles.formContent}>
-              <Image source={require('../../assets/images/locker.png')} style={styles.iconInput}></Image>
-              <TextInput
-                onChangeText={props.handleChange('password')}
-                onBlur={props.handleBlur('password')}
-                value={props.values.password}
-                placeholder="password"
-                secureTextEntry
-                style={styles.input}
-              />
+          )}
+          </Formik>
+        </View>
+        <View style={styles.register}>
+          <TouchableHighlight style={styles.registerButton} onPress={this.navigateToSignUp.bind(this)}>
+            <View style={styles.registerContainer}>
+              <Text style={styles.registerText}>Don't have an account ?</Text>
+              <Text style={styles.registerTextBold}> Sign up</Text>
             </View>
-            <Button onPress={props.handleSubmit} title="Submit" />
-          </View>
-        )}
-        </Formik>
-        <Button
-        onPress={this.navigateToSignUp.bind(this)}
-        title="Don't have an account ? Sign up"
-        ></Button>
+          </TouchableHighlight>
+        </View>
       </KeyboardAvoidingView>
     );
   }
@@ -112,9 +129,10 @@ export default class LoginScreen extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    flexDirection: 'column'
   },
-  test: {
+  background: {
     position: 'absolute',
     top: 0,
     left: 0,
@@ -122,25 +140,89 @@ const styles = StyleSheet.create({
     height: '100%',
     resizeMode: 'cover'
   },
+  containerLogo: {
+    flex: 3,
+    marginBottom: 100
+  },
   logo: {
-    position: 'absolute',
-    top: 50,
-    width: 300,
-    left: 60,
-    height: 300
+    width: '100%',
+    height: '100%',
+    marginTop: 50,
+    resizeMode: 'contain',
+  },
+  containerForm: {
+    top: 0,
+    flex: 2
   },
   form: {
-    top: '70%'
+    top: 0,
+    flex: 1
   },
   formContent: {
     width: '70%',
     marginLeft: '15%',
-    flexDirection: 'row'
+    flexDirection: 'row',
+    flex: 1,
+    marginBottom: 20
   },
   iconInput: {
-    width: 20,
-    height: 20
+    flex: 1,
+    resizeMode: 'contain',
+    alignSelf: 'center'
   },
   input: {
+    flex: 9,
+    marginLeft: 10,
+    borderBottomColor: 'white',
+    borderBottomWidth: 2,
+    color: 'white'
+  },
+  error: {
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 10
+  },
+  errorText: {
+    color: 'red'
+  },
+  containerSubmit: {
+    flex: 1,
+    width: '40%',
+    marginLeft: '30%',
+  },
+  submit: {
+    flex: 1,
+    backgroundColor: '#ffffff50',
+    borderRadius: 5,
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  submitText: {
+    color: 'white',
+  },
+  register: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    width: '100%'
+  },
+  registerButton: {
+    width: '50%'
+
+  },
+  registerContainer: {
+    flexDirection: 'row',
+    width: '100%'
+  },
+  registerText: {
+    color: 'white',
+    
+    width: '74%'
+  },
+  registerTextBold: {
+    color: 'white',
+    fontWeight: 'bold',
+    width: '26%'
+    
   }
 });

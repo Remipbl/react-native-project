@@ -4,7 +4,7 @@ import { StyleSheet, Text, Button, View, TextInput, Image, KeyboardAvoidingView 
 import * as firebase from 'firebase';
 import { Formik } from 'formik';
 
-import { AuthService } from './../services/auth'; 
+import auth from './../services/auth'; 
 
 export default class SignUpScreen extends React.Component {
     state = {};
@@ -12,13 +12,12 @@ export default class SignUpScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {username:'' ,email:'', password:'', error:'', loading: false};
-    this.authService = new AuthService();
   }
 
   onSignUpPress() {
     this.setState({error:'', loading: true});
     if (this.checkCredentials()) {
-        this.authService.signup({email: this.state.email, password: this.state.password, username: this.state.username})
+        auth.signup({email: this.state.email, password: this.state.password, username: this.state.username})
         .subscribe(res => {
             if (res) {
                 this.setState({loading:false});
@@ -48,7 +47,7 @@ export default class SignUpScreen extends React.Component {
         return true;
   }
 
-  navigateToSignIn() {
+  navigateToSignIn = () => {
       this.props.navigation.navigate('Auth');
   }
 
@@ -68,12 +67,12 @@ export default class SignUpScreen extends React.Component {
 
   render() {
     return (
-        <KeyboardAvoidingView behavior="padding">
+        <KeyboardAvoidingView behavior="padding" style={styles.container}>
             <Button
-            onPress={this.navigateToSignIn.bind(this)}
+            onPress={this.navigateToSignIn}
             title="You have an account ?"
             style={styles.button}
-            ></Button>
+            />
             <Formik
             initialValues={{ username: this.state.username, email: this.state.email, password: this.state.password }}
             onSubmit={values => {
@@ -126,22 +125,27 @@ export default class SignUpScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  
+    container: {
+        flex: 1,
+        backgroundColor: "#55ffff"
+    },  
     form: {
-        top: '70%'
+        top: '20%'
       },
-      formContent: {
+    formContent: {
         width: '70%',
         marginLeft: '15%',
-        flexDirection: 'row'
-      },
-      iconInput: {
+        flexDirection: 'row',
+        backgroundColor: '#ff55ff'
+    },
+    iconInput: {
         width: 20,
         height: 20
-      },
-      input: {
-      },
-      button: {
-          marginTop: 2000
-      }
+    },
+    input: {
+        flex: 1,
+    },
+    button: {
+        top: '0%'
+    }
 });

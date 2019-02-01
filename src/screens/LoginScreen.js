@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import {
   Image,
@@ -18,7 +19,7 @@ import { Formik } from 'formik';
 
 import { MonoText } from '../components/StyledText';
 
-import { AuthService } from './../services/auth'; 
+import auth from './../services/auth'; 
 
 export default class LoginScreen extends React.Component {
   static navigationOptions = {
@@ -28,14 +29,12 @@ export default class LoginScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {email:'', password:'', error:'', loading: false};
-    this.authService = new AuthService();
   }
   
   onLoginPress() {
-    console.log(this.state);
     this.setState({error:'', loading: true});
 
-    this.authService.signin({email: this.state.email, password: this.state.password})
+    auth.signin({email: this.state.email, password: this.state.password})
     .subscribe(res => {
       if (res) {
         this.setState({error:'', loading:false});

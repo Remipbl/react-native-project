@@ -1,12 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, Button, View, TextInput, Image, KeyboardAvoidingView } from 'react-native';
-//import { Input } from 'react-native-elements';
 import * as firebase from 'firebase';
 import { Formik } from 'formik';
 
-import auth from './../services/auth'; 
+import auth from '../../config/api/services/auth'; 
 
-export default class SignUpScreen extends React.Component {
+class Register extends React.Component {
     state = {};
 
   constructor(props) {
@@ -83,7 +82,7 @@ export default class SignUpScreen extends React.Component {
             {props => (
             <View style={styles.form}>
                 <View style={styles.formContent}>
-                    <Image source={require('../../assets/images/user.png')} style={styles.iconInput}></Image>
+                    <Image source={require('../../../assets/images/user.png')} style={styles.iconInput}></Image>
                     <TextInput
                         onChangeText={props.handleChange('username')}
                         onBlur={props.handleBlur('username')}
@@ -93,7 +92,7 @@ export default class SignUpScreen extends React.Component {
                     />
                 </View>
                 <View style={styles.formContent}>
-                    <Image source={require('../../assets/images/user.png')} style={styles.iconInput}></Image>
+                    <Image source={require('../../../assets/images/user.png')} style={styles.iconInput}></Image>
                     <TextInput
                         onChangeText={props.handleChange('email')}
                         onBlur={props.handleBlur('email')}
@@ -103,7 +102,7 @@ export default class SignUpScreen extends React.Component {
                     />
                 </View>
                 <View style={styles.formContent}>
-                    <Image source={require('../../assets/images/locker.png')} style={styles.iconInput}></Image>
+                    <Image source={require('../../../assets/images/locker.png')} style={styles.iconInput}></Image>
                     <TextInput
                         onChangeText={props.handleChange('password')}
                         onBlur={props.handleBlur('password')}
@@ -149,3 +148,5 @@ const styles = StyleSheet.create({
         top: '0%'
     }
 });
+
+export default Register;

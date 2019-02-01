@@ -4,26 +4,8 @@ import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { AppLoading, Asset, Font, Icon } from 'expo';
 import AppNavigator from './src/AppNavigator';
 
-import ApiKeys from './src/constants/ApiKeys';
+import ApiKeys from './src/config/api/ApiKeys';
 import * as firebase from 'firebase';
-<<<<<<< HEAD
-=======
-
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoadingComplete: false,
-    };
-    
-    console.ignoredYellowBox = [
-      'Setting a timer'
-    ]
-
-    //Initialize firebase
-    if (!firebase.apps.length) { firebase.initializeApp(ApiKeys.FirebaseConfig); }
-  }
->>>>>>> 960229d7d054e5d258bac54fc06d2bfa31988dd3
 
 class App extends React.Component {
   constructor() {
@@ -31,6 +13,8 @@ class App extends React.Component {
     this.state = {
       isLoadingComplete: false,
     };
+    //Initialize firebase
+    if (!firebase.apps.length) { firebase.initializeApp(ApiKeys.FirebaseConfig); }
   }
 
   _loadResourcesAsync = async () => {

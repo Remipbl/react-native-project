@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/bin/node /mnt/c/Users/adrie/AppData/Roaming/npm/node_modules/yarn/bin/yarn.js add rxjs
+  /usr/bin/node /mnt/c/Users/adrie/AppData/Roaming/npm/node_modules/yarn/bin/yarn.js
 
 PATH: 
   /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Users/adrie/AppData/Local/Android/Sdk/platform-tools:/mnt/c/Users/adrie/AppData/Local/Android/Sdk/tools:/mnt/c/Program Files/Java/jdk1.8.0_191/bin:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath_target_283352625:/mnt/c/Program Files (x86)/Intel/iCLS Client:/mnt/c/Program Files/Intel/iCLS Client:/mnt/c/Windows/System32:/mnt/c/Windows:/mnt/c/Windows/System32/wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/IPT:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/IPT:/mnt/c/Program Files (x86)/ATI Technologies/ATI.ACE/Core-Static:/mnt/c/Program Files/cURL/bin:/mnt/c/HashiCorp/Vagrant/bin:/mnt/c/Program Files/Intel/WiFi/bin:/mnt/c/Program Files/Common Files/Intel/WirelessCommon:/mnt/d/Logiciel/Visual Studio code/Microsoft VS Code/bin:/mnt/c/Windows/System32/OpenSSH:/mnt/c/Program Files/PuTTY:/mnt/c/Program Files/TortoiseSVN/bin:/mnt/d/Logiciel/AndroidStudio/platform-tools/adb.exe:/mnt/d/Logiciel/AndroidStudio/platform-tools:/mnt/d/Logiciel/AndroidStudio/jdk-11.0.1_windows-x64_bin/jdk-11.0.1/bin:/mnt/d/Logiciel/AndroidStudio/gradle-4.10.2/bin:/mnt/c/Program Files/nodejs:/mnt/c/Users/adrie/AppData/Local/Microsoft/WindowsApps:/mnt/d/Logiciel/Visual Studio code/Microsoft VS Code/bin:/mnt/c/Users/adrie/.babun:/mnt/c/Users/adrie/AppData/Roaming/npm
@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  Error: ENOENT: no such file or directory, lstat '/home/adrienms/.cache/yarn/v4/npm-iconv-lite-0.4.24-2022b4b25fbddc21d2f524974a474aafe733908b/node_modules/iconv-lite/lib/extend-node.js'
+  Error: ENOENT: no such file or directory, lstat '/home/adrienms/.cache/yarn/v4/npm-request-promise-core-1.1.1-3eee00b2c5aa83239cfb04c5700da36f81cd08b6/node_modules/request-promise-core/lib/plumbing.js'
 
 npm manifest: 
   {
@@ -37,9 +37,12 @@ npm manifest:
       "formik": "^1.4.3",
       "react": "16.5.0",
       "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
-      "react-navigation": "^3.0.9"
+      "react-native-keyboard-aware-scroll-view": "^0.8.0",
+      "react-navigation": "^3.0.9",
+      "rxjs": "6"
     },
     "devDependencies": {
+      "babel-eslint": "^10.0.1",
       "babel-preset-expo": "^5.0.0",
       "eslint": "^5.12.1",
       "eslint-config-airbnb": "^17.1.0",
@@ -1301,6 +1304,18 @@ Lockfile:
     version "7.0.0-bridge.0"
     resolved "https://registry.yarnpkg.com/babel-core/-/babel-core-7.0.0-bridge.0.tgz#95a492ddd90f9b4e9a4a1da14eb335b87b634ece"
     integrity sha512-poPX9mZH/5CSanm50Q+1toVci6pv5KSRv/5TWCwtzQS5XEwn40BcCrgIeMFWP9CKKIniKXNxoIOnOq4VVlGXhg==
+  
+  babel-eslint@^10.0.1:
+    version "10.0.1"
+    resolved "https://registry.yarnpkg.com/babel-eslint/-/babel-eslint-10.0.1.tgz#919681dc099614cd7d31d45c8908695092a1faed"
+    integrity sha512-z7OT1iNV+TjOwHNLLyJk+HN+YVWX+CLE6fPD2SymJZOZQBs+QIexFjhm4keGTm8MW9xr4EC9Q0PbaLB24V5GoQ==
+    dependencies:
+      "@babel/code-frame" "^7.0.0"
+      "@babel/parser" "^7.0.0"
+      "@babel/traverse" "^7.0.0"
+      "@babel/types" "^7.0.0"
+      eslint-scope "3.7.1"
+      eslint-visitor-keys "^1.0.0"
   
   babel-generator@^6.18.0, babel-generator@^6.26.0:
     version "6.26.1"
@@ -2735,6 +2750,14 @@ Lockfile:
     version "0.1.1"
     resolved "https://registry.yarnpkg.com/eslint-restricted-globals/-/eslint-restricted-globals-0.1.1.tgz#35f0d5cbc64c2e3ed62e93b4b1a7af05ba7ed4d7"
     integrity sha1-NfDVy8ZMLj7WLpO0saevBbp+1Nc=
+  
+  eslint-scope@3.7.1:
+    version "3.7.1"
+    resolved "https://registry.yarnpkg.com/eslint-scope/-/eslint-scope-3.7.1.tgz#3d63c3edfda02e06e01a452ad88caacc7cdcb6e8"
+    integrity sha1-PWPD7f2gLgbgGkUq2IyqzHzctug=
+    dependencies:
+      esrecurse "^4.1.0"
+      estraverse "^4.1.1"
   
   eslint-scope@^4.0.0:
     version "4.0.0"
@@ -6323,6 +6346,19 @@ Lockfile:
       invariant "^2.2.2"
       prop-types "^15.5.10"
   
+  react-native-iphone-x-helper@^1.0.3:
+    version "1.2.0"
+    resolved "https://registry.yarnpkg.com/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.2.0.tgz#9f8a376eb00bc712115abff4420318a0063fa796"
+    integrity sha512-xIeTo4s77wwKgBZLVRIZC9tM9/PkXS46Ul76NXmvmixEb3ZwqGdQesR3zRiLMOoIdfOURB6N9bba9po7+x9Bag==
+  
+  react-native-keyboard-aware-scroll-view@^0.8.0:
+    version "0.8.0"
+    resolved "https://registry.yarnpkg.com/react-native-keyboard-aware-scroll-view/-/react-native-keyboard-aware-scroll-view-0.8.0.tgz#00bcaa38c91323913bb7a733059ad2bc4875f88c"
+    integrity sha512-gPfhgHQI/z7Cc5aeNOEmK0b250QkAeU6V+4oH8EC7mmFneEKn6MAIDjpoiwqt6bV+lFJPABXfx9MtrRmtCeJ/Q==
+    dependencies:
+      prop-types "^15.6.2"
+      react-native-iphone-x-helper "^1.0.3"
+  
   react-native-maps@expo/react-native-maps#v0.22.1-exp.0:
     version "0.22.1"
     resolved "https://codeload.github.com/expo/react-native-maps/tar.gz/e6f98ff7272e5d0a7fe974a41f28593af2d77bb2"
@@ -6830,6 +6866,13 @@ Lockfile:
     version "4.0.8"
     resolved "https://registry.yarnpkg.com/rx-lite/-/rx-lite-4.0.8.tgz#0b1e11af8bc44836f04a6407e92da42467b79444"
     integrity sha1-Cx4Rr4vESDbwSmQH6S2kJGe3lEQ=
+  
+  rxjs@6:
+    version "6.4.0"
+    resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.4.0.tgz#f3bb0fe7bda7fb69deac0c16f17b50b0b8790504"
+    integrity sha512-Z9Yfa11F6B9Sg/BK9MnqnQ+aQYicPLtilXBp2yUtDt2JRCE0h26d33EnfO3ZxoNxG0T92OUucP3Ct7cpfkdFfw==
+    dependencies:
+      tslib "^1.9.0"
   
   rxjs@^6.1.0:
     version "6.3.3"

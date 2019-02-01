@@ -1,8 +1,8 @@
 import React from 'react';
 import { ActivityIndicator, StyleSheet } from 'react-native';
-import auth from '../services/auth';
+import auth from '../../config/api/services/auth';
 
-export default class LoadingScreen extends React.Component {
+class Loading extends React.Component {
 
   constructor(props) {
     super(props);
@@ -27,3 +27,5 @@ const styles = StyleSheet.create({
     marginTop: 100,
   },
 });
+
+export default Loading;

@@ -2,9 +2,9 @@ import React from 'react';
 import { ActivityIndicator, StyleSheet, Button } from 'react-native';
 import * as firebase from 'firebase';
 
-export default class ProfilScreen extends React.Component {
+class Profil extends React.Component {
 
-  logout() {
+  logout = () => {
     firebase.auth().signOut();
     this.props.navigation.navigate('Auth');
   }
@@ -20,3 +20,5 @@ const styles = StyleSheet.create({
     marginTop: 100,
   },
 });
+
+export default Profil;

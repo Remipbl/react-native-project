@@ -19,11 +19,11 @@ import { WebBrowser } from 'expo';
 import { Formik } from 'formik';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
-import { MonoText } from '../components/StyledText';
+import { MonoText } from '../../components/StyledText';
 
-import auth from './../services/auth'; 
+import auth from '../../config/api/services/auth'; 
 
-export default class LoginScreen extends React.Component {
+class Login extends React.Component {
   static navigationOptions = {
     header: null,
   };
@@ -61,15 +61,15 @@ export default class LoginScreen extends React.Component {
   }
 
   navigateToSignUp() {
-    this.props.navigation.navigate('SignUp');
+    this.props.navigation.navigate('register');
   }
 
   render() {
     return (
       <KeyboardAvoidingView style={styles.container} behavior="padding">
-        <Image source={require('../../assets/images/background.png')} style={styles.background}></Image>
+        <Image source={require('../../../assets/images/background.png')} style={styles.background}></Image>
         <View style={styles.containerLogo}>
-          <Image source={require('../../assets/images/logoJustMeet.png')} style={styles.logo}></Image>
+          <Image source={require('../../../assets/images/logoJustMeet.png')} style={styles.logo}></Image>
         </View>
         <View style={styles.containerForm}>
           <Formik
@@ -82,7 +82,7 @@ export default class LoginScreen extends React.Component {
           {props => (
             <View style={styles.form}>
               <View style={styles.formContent}>
-                <Image source={require('../../assets/images/user.png')} style={styles.iconInput}></Image>
+                <Image source={require('../../../assets/images/user.png')} style={styles.iconInput}></Image>
                 <TextInput
                   onChangeText={props.handleChange('email')}
                   onBlur={props.handleBlur('email')}
@@ -92,7 +92,7 @@ export default class LoginScreen extends React.Component {
                 />
               </View>
               <View style={styles.formContent}>
-                <Image source={require('../../assets/images/locker.png')} style={styles.iconInput}></Image>
+                <Image source={require('../../../assets/images/locker.png')} style={styles.iconInput}></Image>
                 <TextInput
                   onChangeText={props.handleChange('password')}
                   onBlur={props.handleBlur('password')}
@@ -226,3 +226,5 @@ const styles = StyleSheet.create({
     
   }
 });
+
+export default Login;

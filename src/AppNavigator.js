@@ -6,6 +6,9 @@ export const RootNavigator = createStackNavigator({
   homePage: {
     screen: Pages.HomePage,
   },
+  categories: {
+    screen: Pages.Categories,
+  },
   profile: {
     screen: Pages.Profile,
   },

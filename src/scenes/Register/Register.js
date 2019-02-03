@@ -304,10 +304,10 @@ const styles = StyleSheet.create({
         top: '20%'
       },
     formContent: {
-        width: '70%',
+        width: '80%',
         marginLeft: '15%',
         flexDirection: 'row',
-        backgroundColor: '#ff55ff'
+        //backgroundColor: '#ff55ff'
     },
     iconInput: {
         width: 20,
@@ -315,6 +315,7 @@ const styles = StyleSheet.create({
     },
     input: {
         flex: 1,
+        color: 'white',
     },
     button: {
         top: '0%'

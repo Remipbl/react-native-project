@@ -15,7 +15,7 @@ class HomePage extends React.Component<Props, State> {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Hello</Text>
+        <Text>NOOOOO</Text>
       </View>
     );
   }

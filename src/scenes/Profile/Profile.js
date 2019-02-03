@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
-import { StyleSheet, View, TextInput } from 'react-native';
+import { StyleSheet, View, TextInput, Button } from 'react-native';
+import * as firebase from 'firebase';
 import { setUsername } from '../../redux/Profile/actions';
 
 type Props = {
@@ -18,6 +19,10 @@ class Profile extends React.Component<Props, State> {
     this.state = { text: 'Username' };
   }
 
+  logout = () => {
+    firebase.auth().signOut();
+    this.props.navigation.navigate('Auth');
+  }
 
   render() {
     return (
@@ -30,6 +35,7 @@ class Profile extends React.Component<Props, State> {
           }}
           value={this.state.text}
         />
+        <Button onPress={this.logout} title="logout" />
       </View>
     );
   }

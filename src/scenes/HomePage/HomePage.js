@@ -11,6 +11,9 @@ type State = {
 };
 
 class HomePage extends React.Component<Props, State> {
+  goToProfil = () => {
+    this.props.navigation.navigate('profil');
+  }
 
   onPressCategories = () => {
     this.props.navigation.navigate('categories');

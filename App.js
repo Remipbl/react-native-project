@@ -6,12 +6,17 @@ import { Provider } from 'react-redux';
 import AppNavigator from './src/AppNavigator';
 import store from './src/redux/store'
 
+import ApiKeys from './src/config/api/ApiKeys';
+import * as firebase from 'firebase';
+
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
       isLoadingComplete: false,
     };
+    //Initialize firebase
+    if (!firebase.apps.length) { firebase.initializeApp(ApiKeys.FirebaseConfig); }
   }
 
   _loadResourcesAsync = async () => {

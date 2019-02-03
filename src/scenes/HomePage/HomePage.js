@@ -12,8 +12,12 @@ type State = {
 
 class HomePage extends React.Component<Props, State> {
 
-  onPress = () => {
+  onPressCategories = () => {
     this.props.navigation.navigate('categories');
+  }
+
+  onPressProfile = () => {
+    this.props.navigation.navigate('profile');
   }
 
   render() {
@@ -44,13 +48,13 @@ class HomePage extends React.Component<Props, State> {
             </TouchableOpacity>
           </View>
           <View style={styles.subContainerMainButtons}>
-            <TouchableOpacity onPress={this.onPress}>
+            <TouchableOpacity onPress={this.onPressCategories}>
             <View style={styles.squares}>
               <Image source={require('../../../assets/images/clipboards.png')} style={styles.imgButtons}></Image>
               <Text style={styles.textButtons}>Categories</Text>
             </View>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={this.onPressProfile}>
             <View style={styles.squares}>
               <Image source={require('../../../assets/images/help.png')} style={styles.imgButtons}></Image>
               <Text style={styles.textButtons}>Infos</Text>

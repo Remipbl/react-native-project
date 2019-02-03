@@ -9,7 +9,10 @@ export const RootNavigator = createStackNavigator({
   categories: {
     screen: Pages.Categories,
   },
-  initialRouteName: 'homePage',
+  profile: {
+    screen: Pages.Profile,
+  },
+  initialRouteName: 'homepage',
 });
 
 const AppContainer = createAppContainer(RootNavigator);

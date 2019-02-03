@@ -2,7 +2,9 @@
 import React from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { AppLoading, Asset, Font, Icon } from 'expo';
+import { Provider } from 'react-redux';
 import AppNavigator from './src/AppNavigator';
+import store from './src/redux/store'
 
 class App extends React.Component {
   constructor() {
@@ -46,9 +48,11 @@ class App extends React.Component {
       );
     }
     return (
-      <View style={styles.container}>
-        <AppNavigator />
-      </View>
+      <Provider store={store}>
+        <View style={styles.container}>
+          <AppNavigator />
+        </View>
+      </Provider>
     );
   }
 }
@@ -56,7 +60,6 @@ class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
   },
 });
 

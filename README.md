@@ -24,6 +24,13 @@ yarn install
 
 # Tests
 
+## test account
+
+To log in the application :
+
+* username : test@gmail.com
+* password : justmeet
+
 ## ESlint test
 
 To run ESlint :

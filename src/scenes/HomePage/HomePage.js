@@ -12,6 +12,10 @@ type State = {
 
 class HomePage extends React.Component<Props, State> {
 
+  onPress = () => {
+    this.props.navigation.navigate('categories');
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -40,7 +44,7 @@ class HomePage extends React.Component<Props, State> {
             </TouchableOpacity>
           </View>
           <View style={styles.subContainerMainButtons}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={this.onPress}>
             <View style={styles.squares}>
               <Image source={require('../../../assets/images/clipboards.png')} style={styles.imgButtons}></Image>
               <Text style={styles.textButtons}>Categories</Text>
